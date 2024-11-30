@@ -1,70 +1,101 @@
-package mobilepaymentapplication;
+package com.group4.mobilepaymentapplication;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AccountInformationActivity extends AppCompatActivity {
 
-    private EditText changeAccountNameEditText, changeAccountEmailEditText, changePasswordEditText;
-    private Button saveChangesButton;
-    private UserPreferences userPreferences;
+    private EditText cardHolderName, cardNumber;
+    private Button loginButton, googlePayButton, phonePayButton, otherButton;
+    private TextView signUpText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account_information);
+        setContentView(R.layout.activity_account_information); // Update with your XML file name
 
-        changeAccountNameEditText = findViewById(R.id.change_account_name);
-        changeAccountEmailEditText = findViewById(R.id.change_account_email);
-        changePasswordEditText = findViewById(R.id.change_password);
-        userPreferences = new UserPreferences(this);
+        // Initialize views
+        cardHolderName = findViewById(R.id.cardHolderName);
+        cardNumber = findViewById(R.id.cardNumber);
+        loginButton = findViewById(R.id.loginButton);
+        googlePayButton = findViewById(R.id.googlePayButton);
+        phonePayButton = findViewById(R.id.phonePayButton);
+        otherButton = findViewById(R.id.otherButton);
+        signUpText = findViewById(R.id.signUpText);
 
-        loadExistingData();
-
-        saveChangesButton = findViewById(R.id.save_changes_button);
-
-        saveChangesButton.setOnClickListener(new View.OnClickListener() {
+        // Set onClickListeners for buttons
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User currentUser = userPreferences.getCurrentUser();
+                handleLogin();
+            }
+        });
 
-                String newName = changeAccountNameEditText.getText().toString().trim();
-                String newEmail = changeAccountEmailEditText.getText().toString().trim();
-                String newPassword = changePasswordEditText.getText().toString().trim();
+        googlePayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleGooglePay();
+            }
+        });
 
-                // Clone the current user to update details
-                User updatedUser = new User(newName.isEmpty() ? currentUser.getName() : newName,
-                        newEmail.isEmpty() ? currentUser.getEmail() : newEmail,
-                        newPassword.isEmpty() ? currentUser.getPassword() : newPassword);
-                updatedUser.setId(currentUser.getId());
+        phonePayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handlePhonePay();
+            }
+        });
 
-                // Attempt to save the updated user
-                if (!userPreferences.saveUser(updatedUser)) {
-                    Toast.makeText(AccountInformationActivity.this, "Email already in use!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
+        otherButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleOtherPayment();
+            }
+        });
 
-                if (!newEmail.isEmpty() && !newEmail.equals(currentUser.getEmail())) {
-                    userPreferences.updateLoggedInUserEmail(newEmail);
-                }
-
-                Toast.makeText(AccountInformationActivity.this, "Changes Saved", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(AccountInformationActivity.this, MainActivity.class);
-                startActivity(intent);
+        signUpText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                handleSignUp();
             }
         });
     }
 
-    private void loadExistingData() {
-        User currentUser = userPreferences.getCurrentUser();
-        changeAccountNameEditText.setText(currentUser.getName());
-        changeAccountEmailEditText.setText(currentUser.getEmail());
-        changePasswordEditText.setText(currentUser.getPassword());
+    private void handleLogin() {
+        String name = cardHolderName.getText().toString().trim();
+        String cardNum = cardNumber.getText().toString().trim();
+
+        if (name.isEmpty() || cardNum.isEmpty()) {
+            Toast.makeText(this, "Please enter all details", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show();
+            // Add your login logic here
+        }
+    }
+
+    private void handleGooglePay() {
+        Toast.makeText(this, "Google Pay option selected", Toast.LENGTH_SHORT).show();
+        // Add Google Pay logic here
+    }
+
+    private void handlePhonePay() {
+        Toast.makeText(this, "Phone Pay option selected", Toast.LENGTH_SHORT).show();
+        // Add Phone Pay logic here
+    }
+
+    private void handleOtherPayment() {
+        Toast.makeText(this, "Other payment option selected", Toast.LENGTH_SHORT).show();
+        // Add other payment logic here
+    }
+
+    private void handleSignUp() {
+        Toast.makeText(this, "Sign up clicked", Toast.LENGTH_SHORT).show();
+        // Add sign-up navigation logic here
     }
 }
