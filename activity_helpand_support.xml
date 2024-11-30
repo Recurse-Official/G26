@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+   xmlns:tools="http://schemas.android.com/tools"
+   android:layout_width="match_parent"
+   android:layout_height="match_parent"
+   android:paddingLeft="16dp"
+   android:paddingTop="16dp"
+   android:paddingRight="16dp"
+   android:paddingBottom="16dp"
+   tools:context=".HelpandSupportActivity">
+
+   <RelativeLayout
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+       <TextView
+           android:id="@+id/HelpandSupportTitle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_centerHorizontal="true"
+           android:layout_marginBottom="24dp"
+           android:text="Help and Support"
+           android:textColor="@color/black"
+           android:textSize="34sp" />
+
+  <LinearLayout
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:layout_below="@id/HelpandSupportTitle"
+  android:layout_alignParentStart="true"
+  android:layout_alignParentEnd="true"
+  android:layout_marginStart="16dp"
+  android:layout_marginTop="16dp"
+  android:layout_marginEnd="16dp"
+  android:orientation="vertical">
+
+      <TextView
+          android:id="@+id/FAQTitle"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="Frequently Asked Questions"
+          android:textColor="@color/teal_700"
+          android:textSize="24sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/Q1"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:text="Q: How do I make a payment?"
+          android:textColor="@color/teal_700"
+          android:textSize="18sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/Q1answer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="A: To make a payment, navigate to the 'Pay' section and follow the instructions. You can choose your payment method and enter the recipient."
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+
+      <TextView
+          android:id="@+id/Q2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:text="Q: Can I track my payment history?"
+          android:textColor="@color/teal_700"
+          android:textSize="18sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/Q2answer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="A: Yes, you can view your payment history in the Transaction History page!"
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+
+      <TextView
+          android:id="@+id/Q3"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:text="Q: Is my personal information secure?"
+          android:textColor="@color/teal_700"
+          android:textSize="18sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/Q3answer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="A: Absolutely! We prioritize the security of your personal information. Our app uses advanced encryption techniques to safeguard your data."
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+
+      <TextView
+          android:id="@+id/Q4"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:text="Q: How can I change my payment preferences?"
+          android:textColor="@color/teal_700"
+          android:textSize="18sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/Q4answer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="24dp"
+          android:text="A: You can customize your payment preferences in the update payment section!."
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+  <!-- Existing layout above this line -->
+
+      <TextView
+          android:id="@+id/Q5"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:text="Q: How do I update the app?"
+          android:textColor="@color/teal_700"
+          android:textSize="18sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/Q5answer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="A: To update the app, go to the app store (Google Play Store or Apple App Store) and check for updates. If an update is available, click on the 'Update' button."
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+
+
+      <TextView
+          android:id="@+id/Q6"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:text="Q: Can I use the app on multiple devices?"
+          android:textColor="@color/teal_700"
+          android:textSize="18sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/Q6answer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="A: Yes, you can use the app on multiple devices. Make sure to log in with the same account credentials on each device to synchronize your data."
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+
+      <TextView
+          android:id="@+id/Q7"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="4dp"
+          android:text="Q: Are there any fees associated with the app?"
+          android:textColor="@color/teal_700"
+          android:textSize="18sp"
+          android:textStyle="italic" />
+
+      <TextView
+          android:id="@+id/Q7answer"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="24dp"
+          android:text="A: The app itself is free to use, but there may be fees associated with specific transactions or services. Transation and Withdrawl fees are based off of transaction amounts."
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+
+  <!-- Existing layout below this line -->
+
+
+      <TextView
+          android:id="@+id/ContactUsTitle"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="Contact Us"
+          android:textColor="@color/teal_700"
+          android:textSize="24sp"
+          android:textStyle="bold" />
+
+      <TextView
+          android:id="@+id/ContactUsInfo"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginBottom="16dp"
+          android:text="For support, please email us at Group4@psu.edu Our customer service team is available 24/7 to assist you with any issues or questions."
+          android:textColor="@color/teal_700"
+          android:textSize="16sp" />
+
+  </LinearLayout>
+
+   </RelativeLayout>
+</ScrollView>

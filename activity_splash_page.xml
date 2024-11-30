@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SplashPageActivity">
+
+    <ImageView
+        android:id="@+id/SplashPageLogo"
+        android:layout_width="164dp"
+        android:layout_height="224dp"
+        android:layout_marginStart="123dp"
+        android:layout_marginTop="82dp"
+        android:layout_marginEnd="124dp"
+        android:layout_marginBottom="-100dp"
+        android:contentDescription="logo"
+        android:cropToPadding="true"
+        app:layout_constraintBottom_toTopOf="@+id/SplashPageText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/screenshot_2023_11_12_at_20_21_11" />
+
+    <TextView
+        android:id="@+id/SplashPageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginEnd="33dp"
+        android:layout_marginBottom="325dp"
+        android:text="Welcome to Money Flow"
+        android:textColor="@color/black"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SplashPageLogo" />
+
+    <Button
+        android:id="@+id/SplashPageContinueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="161dp"
+        android:layout_marginEnd="151dp"
+        android:layout_marginBottom="149dp"
+        android:backgroundTint="@color/teal_700"
+        android:text="Continue to Login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SplashPageText" />
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="253dp"
+        android:layout_marginTop="94dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:text="resetButton"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/SplashPageContinueButton"
+        tools:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
