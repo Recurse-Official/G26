@@ -1,80 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/purple_500"
-    tools:context=".MainActivity">
+    android:background="#F5E9CF">
 
+    <!-- Top Section: Title and Icon -->
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="32dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
 
-    <Button
-        android:id="@+id/RequestButtonMainPage"
-        android:layout_width="105dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="295dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="Request"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/PayButtonMainPage" />
+    <!-- Middle Section: Heading -->
+    <TextView
+        android:id="@+id/loginHeading"
+        android:layout_width="287dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="116dp"
+        android:layout_centerHorizontal="true"
+        android:text="BALANCE YOUR BUCKS"
+        android:textColor="#663300"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
 
-    <Button
-        android:id="@+id/PayButtonMainPage"
-        android:layout_width="105dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="153dp"
-        android:layout_marginTop="128dp"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="56dp"
-        android:backgroundTint="@color/teal_700"
-        android:text="Pay"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/RequestButtonMainPage"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HompageText" />
+    <!-- Middle Section: Description -->
+
+    <!-- Bottom Navigation Bar -->
 
     <TextView
-        android:id="@+id/HompageText"
-        android:layout_width="150dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="145dp"
-        android:layout_marginTop="88dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="611dp"
-        android:text="Welcome! "
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="wrap_content"
+        android:layout_height="418dp"
+        android:layout_below="@+id/loginHeading"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="43dp"
+        android:layout_marginTop="51dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:gravity="center"
+        android:lineSpacingExtra="5dp"
+        android:text="Hello!\nLet’s unlock\nyour financial\npotential."
+        android:textColor="#000000"
+        android:textSize="50sp"
+        tools:ignore="RtlHardcoded" />
 
-    <ImageButton
-        android:id="@+id/settingsButton"
-        android:layout_width="82dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginBottom="585dp"
-        android:backgroundTint="@color/white"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.046"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@android:drawable/ic_menu_sort_by_size"
-        app:tint="@color/teal_700" />
+    <LinearLayout
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="#663300"
+        android:orientation="horizontal">
 
+        <!-- Transactions -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/analysis"
+                android:contentDescription="Transactions icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Transactions"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Savings -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/saving"
+                android:contentDescription="Savings icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Savings"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Virtual Pet -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/virtualpet"
+                android:contentDescription="Virtual pet icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Virtual Pet"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Profile -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/Profile"
+                android:contentDescription="Profile icon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profile"
+                android:textSize="12sp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
